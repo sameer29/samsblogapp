@@ -1,0 +1,22 @@
+{% extends 'blog/base.html' %}
+{% block content %}
+    {% for blog in blogs %}
+    <div class="container m-3">
+    <div class="card">
+        <div class="card-header">
+          {{blog.username}}
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">{{blog.title}}</h5>
+          <p class="card-text">{{blog.body}}</p>
+        </div>
+      </div>
+      <div class="card-footer text-muted">
+        {{blog.pub_date}}
+      </div>
+    </div>
+    {% endfor %} 
+
+
+
+{% endblock content %}

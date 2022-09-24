@@ -1,0 +1,19 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+<form method="POST" class="m-3">
+    {% csrf_token %}
+    <div class="form-group">
+     <label >Blog Title</label>
+      <input type="text" class="form-control" name="title">
+   
+  
+    <div class="form-group">
+      <label >Blog Content</label>
+      <textarea class="form-control" name="body" rows="3"></textarea>
+    </div>
+    <button type="submit" class="btn btn-dark">Create Blog</button>
+
+  </form>
+{% endblock content %}
+
