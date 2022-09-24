@@ -20,7 +20,7 @@ def createblog(request):
 
         )
         blog.save()
-        return redirect("myblog/")
+        return redirect("samsblogapp.herokuapp.com/myblog/")
     return render(request, 'blog/form.html')
 
 @csrf_exempt
