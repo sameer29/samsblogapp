@@ -6,7 +6,7 @@ from django.views.decorators.csrf import csrf_exempt
 @csrf_exempt
 def index(request):
     blogs = BlogModel.objects.all()
-    return render(request, 'http://samsblogpp.herokuapp.com/blog/index.html', {'blogs': blogs})
+    return render(request, 'blog/index.html', {'blogs': blogs})
 
 @csrf_exempt
 def createblog(request):
@@ -20,11 +20,11 @@ def createblog(request):
 
         )
         blog.save()
-        return redirect("http://samsblogpp.herokuapp.com/myblog/")
-    return render(request, 'http://samsblogpp.herokuapp.com/blog/form.html')
+        return redirect("myblog/")
+    return render(request, 'blog/form.html')
 
 @csrf_exempt
 def myblog(request):
     blogs = BlogModel.objects.filter(username=request.user)
-    return render(request, 'http://samsblogpp.herokuapp.com/blog/index.html', {'blogs': blogs})
+    return render(request, 'blog/index.html', {'blogs': blogs})
 
