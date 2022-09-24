@@ -5,6 +5,6 @@ from . import views
 
 urlpatterns = [
     path('',views.index),
-    path('http://samsblogapp.herokuapp.com/createblog/',views.createblog),
-    path('http://samsblogapp.herokuapp.com/myblog/',views.myblog)
+    path('createblog/',views.createblog),
+    path('myblog/',views.myblog)
 ]
